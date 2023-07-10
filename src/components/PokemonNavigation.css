@@ -1,0 +1,9 @@
+.pokemon-nav-links {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.pokemon-nav-links button {
+  font-family: "Press Start 2P";
+}

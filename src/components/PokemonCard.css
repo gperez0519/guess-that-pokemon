@@ -21,7 +21,7 @@
 }
 
 .txtPokemonName {
-  font-family: 'Press Start 2P';
+  font-family: "Press Start 2P";
   font-size: 0.75rem;
   display: block;
   padding: 0.5rem 1rem;
@@ -45,7 +45,7 @@
   padding: 0.5rem 1rem;
   color: #fff;
   border: 0;
-  font-family: 'Press Start 2P';
+  font-family: "Press Start 2P";
   font-size: 8px;
   line-height: 1.5;
   transition: 1s ease-in-out;
@@ -76,6 +76,7 @@
 
 .pokemon-img-show {
   filter: brightness(100%);
+  animation: brighten 1s ease-in-out;
 }
 
 @-webkit-keyframes fadeInScale {
@@ -101,6 +102,24 @@
     transform: scale(1);
     -webkit-transform: scale(1);
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes brighten {
+  from {
+    filter: brightness(0%);
+  }
+  to {
+    filter: brightness(100%);
+  }
+}
+
+@keyframes brighten {
+  from {
+    filter: brightness(0%);
+  }
+  to {
+    filter: brightness(100%);
   }
 }
 
