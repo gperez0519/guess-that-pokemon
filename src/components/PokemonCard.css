@@ -1,0 +1,133 @@
+.pokemon-card {
+  display: block;
+  width: 275px;
+  height: 350px;
+  background: rgba(82, 73, 73, 0.692);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.pokemon {
+  text-align: center;
+}
+
+.pokemon-pic-container {
+  position: relative;
+}
+
+.guess-container {
+  display: block;
+  width: 100%;
+}
+
+.txtPokemonName {
+  font-family: 'Press Start 2P';
+  font-size: 0.75rem;
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+.one-plus-point {
+  color: rgb(17, 235, 17);
+  position: absolute;
+  right: 0;
+  top: -5px;
+  opacity: 0;
+}
+
+.animate-point {
+  animation: plusOnePoint 1s ease-in-out;
+}
+
+.btnPokemon {
+  border-radius: 5px;
+  background: slateblue;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  border: 0;
+  font-family: 'Press Start 2P';
+  font-size: 8px;
+  line-height: 1.5;
+  transition: 1s ease-in-out;
+  cursor: pointer;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.pokemon-name-container {
+  margin-top: 1rem;
+  position: relative;
+}
+
+.pokemon-name {
+  color: #fff;
+  margin-top: 1.2rem;
+  transition: 1s ease-in-out;
+}
+
+.pokemon-img-hidden {
+  animation: fadeInScale 1s ease-in-out;
+  filter: brightness(0%);
+}
+
+.pokemon-img-show {
+  filter: brightness(100%);
+}
+
+@-webkit-keyframes fadeInScale {
+  from {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes plusOnePoint {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    top: -20px;
+  }
+  100% {
+    opacity: 0;
+    top: -50px;
+  }
+}
+
+@keyframes plusOnePoint {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    top: -20px;
+  }
+  100% {
+    opacity: 0;
+    top: -50px;
+  }
+}

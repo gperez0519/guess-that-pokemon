@@ -1,0 +1,12 @@
+.point-container {
+  display: flex;
+  justify-content: center;
+}
+
+.point-positive {
+  color: rgb(17, 235, 17);
+}
+
+.point-negative {
+  color: rgb(236, 71, 71);
+}
