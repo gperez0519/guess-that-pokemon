@@ -1,23 +1,31 @@
-import React, { useRef, useContext } from 'react';
-import { PokemonDataContext } from '../App';
+import React, { useRef, useContext, useEffect } from "react";
+import { PokemonDataContext } from "../App";
 
 const GuessContainer = ({ showPokemonName, setShowPokemonName, setPoints }) => {
-  const { pokemon, alreadyGuessed, setAlreadyGuessed, setGuessCorrect } =
-    useContext(PokemonDataContext);
+  const {
+    pokemon,
+    alreadyGuessed,
+    setAlreadyGuessed,
+    setGuessCorrect,
+    setProgressDirection,
+  } = useContext(PokemonDataContext);
 
-  const guessRef = useRef('');
+  const guessRef = useRef("");
+
   const submitGuess = () => {
     if (!alreadyGuessed) {
       if (pokemon.name.toLowerCase() === guessRef.current.value.toLowerCase()) {
         setGuessCorrect(true);
-        setPoints((points) => points + 1);
+        setPoints((prevPoints) => prevPoints + 1);
+        setProgressDirection("up");
       } else {
         setGuessCorrect(false);
-        setPoints((points) => points - 1);
+        setPoints((prevPoints) => prevPoints - 1);
+        setProgressDirection("down");
       }
       setShowPokemonName(true);
       setAlreadyGuessed(true);
-      guessRef.current.value = '';
+      guessRef.current.value = "";
     }
   };
   if (showPokemonName)
@@ -28,6 +36,7 @@ const GuessContainer = ({ showPokemonName, setShowPokemonName, setPoints }) => {
       <div>
         <div className="guess-container">
           <input
+            id="guessInput"
             type="text"
             className="txtPokemonName"
             placeholder="Guess the name"
@@ -35,7 +44,11 @@ const GuessContainer = ({ showPokemonName, setShowPokemonName, setPoints }) => {
           />
         </div>
         <div className="btnContainer">
-          <button className="btnPokemon" onClick={submitGuess}>
+          <button
+            id="btnGuessSubmit"
+            className="btnPokemon"
+            onClick={submitGuess}
+          >
             Submit
           </button>
           <button

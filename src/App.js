@@ -1,9 +1,9 @@
-import React, { useState, createContext } from 'react';
-import { useFetch } from './hooks/useFetch';
-import PokemonCard from './components/PokemonCard';
-import PokemonNavigation from './components/PokemonNavigation';
-import '@fontsource/press-start-2p'; // Defaults to weight 400
-import './style.css';
+import React, { useState, createContext } from "react";
+import { useFetch } from "./hooks/useFetch";
+import PokemonCard from "./components/PokemonCard";
+import PokemonNavigation from "./components/PokemonNavigation";
+import "@fontsource/press-start-2p"; // Defaults to weight 400
+import "./style.css";
 
 export const PokemonDataContext = createContext();
 
@@ -15,6 +15,7 @@ export default function App() {
 
   const [alreadyGuessed, setAlreadyGuessed] = useState(false);
   const [guessCorrect, setGuessCorrect] = useState(false);
+  const [progressDirection, setProgressDirection] = useState("neutral");
 
   if (loading) return <>Loading...</>;
 
@@ -29,6 +30,8 @@ export default function App() {
         setAlreadyGuessed,
         guessCorrect,
         setGuessCorrect,
+        setProgressDirection,
+        progressDirection,
       }}
     >
       <div className="pokemon-container">

@@ -11,7 +11,7 @@ const PokemonNavigation = ({ count, setCount }) => {
         disabled={count < 2}
         onClick={() => {
           setCount(count - 1);
-          setAlreadyGuessed(false);
+          setAlreadyGuessed(true);
           setGuessCorrect(false);
         }}
       >

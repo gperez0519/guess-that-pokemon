@@ -1,14 +1,11 @@
 import React from "react";
 import "./PointContainer.css";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
+import { PokemonDataContext } from "../App";
 
 const PointContainer = ({ points }) => {
-  const [prevPoints, setPrevPoints] = useState(points);
-
-  useEffect(() => {
-    setPrevPoints(points);
-  }, [points]);
+  const { progressDirection } = useContext(PokemonDataContext);
 
   return (
     <div
@@ -18,10 +15,21 @@ const PointContainer = ({ points }) => {
           : "point-container point-negative"
       }
     >
-      <p>
-        Points: {points} {prevPoints < points && <FaArrowUp />}
-        {points > prevPoints && <FaArrowDown className="point-negative" />}
-      </p>
+      <div>
+        <p>
+          Points: {points}{" "}
+          <span>
+            {progressDirection === "up" && (
+              <FaArrowUp className="point-positive" />
+            )}
+          </span>
+          <span>
+            {progressDirection === "down" && (
+              <FaArrowDown className="point-negative" />
+            )}
+          </span>
+        </p>
+      </div>
     </div>
   );
 };
