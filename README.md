@@ -10,5 +10,5 @@
 
 **Note: if you click "I give up" you will not lose a point. However, if you guess and it is the wrong pokemon name you lose a point.**
 
-[Demo on StackBlitz ⚡️](https://react-nm9nyr.stackblitz.io/) |
+[Demo on StackBlitz ⚡️](https://react-nm9nyr.stackblitz.io/) | 
 [View Code on StackBlitz⚡️](https://stackblitz.com/edit/react-nm9nyr)
