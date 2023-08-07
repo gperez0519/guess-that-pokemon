@@ -8,7 +8,7 @@ const PokemonCard = () => {
   const [showPokemonName, setShowPokemonName] = useState(false);
 
   const [points, setPoints] = useState(0);
-  const { pokemon, count, guessCorrect } = useContext(PokemonDataContext);
+  const { pokemon, count, guessCorrect, loading } = useContext(PokemonDataContext);
 
   useEffect(() => {
     setShowPokemonName(false);
@@ -18,9 +18,13 @@ const PokemonCard = () => {
     <div className="pokemon-card">
       <PointContainer points={points} />
       <div className="pokemon">
+        {loading &&
+          <div className="loading">Loading...</div>
+        }
         {pokemon && (
           <>
             <div className="pokemon-pic-container">
+
               <img
                 src={pokemon.sprites.other['official-artwork'].front_default}
                 className={

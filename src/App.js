@@ -9,15 +9,15 @@ export const PokemonDataContext = createContext();
 
 export default function App() {
   const [count, setCount] = useState(1);
+
+  const [guessCorrect, setGuessCorrect] = useState(false);
+  const [progressDirection, setProgressDirection] = useState("neutral");
+
   const [data, loading, error] = useFetch(
     `https://pokeapi.co/api/v2/pokemon/${count}`
   );
 
-  const [alreadyGuessed, setAlreadyGuessed] = useState(false);
-  const [guessCorrect, setGuessCorrect] = useState(false);
-  const [progressDirection, setProgressDirection] = useState("neutral");
 
-  if (loading) return <>Loading...</>;
 
   if (error) return <div className="error">{`Error occurred ${error}`}</div>;
 
@@ -26,12 +26,11 @@ export default function App() {
       value={{
         pokemon: data,
         count,
-        alreadyGuessed,
-        setAlreadyGuessed,
         guessCorrect,
         setGuessCorrect,
         setProgressDirection,
         progressDirection,
+        loading
       }}
     >
       <div className="pokemon-container">

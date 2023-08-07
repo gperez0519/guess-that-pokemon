@@ -9,6 +9,7 @@
 
 .pokemon {
   text-align: center;
+  height: 100%;
 }
 
 .pokemon-pic-container {
@@ -37,19 +38,6 @@
 
 .animate-point {
   animation: plusOnePoint 1s ease-in-out;
-}
-
-.btnPokemon {
-  border-radius: 5px;
-  background: slateblue;
-  padding: 0.5rem 1rem;
-  color: #fff;
-  border: 0;
-  font-family: "Press Start 2P";
-  font-size: 8px;
-  line-height: 1.5;
-  transition: 1s ease-in-out;
-  cursor: pointer;
 }
 
 .btnContainer {

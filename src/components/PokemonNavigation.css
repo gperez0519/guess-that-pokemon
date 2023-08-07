@@ -6,4 +6,8 @@
 
 .pokemon-nav-links button {
   font-family: "Press Start 2P";
+  cursor: pointer;
+  background: slateblue;
+  padding: 0.5rem 1rem;
+  color: #fff;
 }

@@ -7,7 +7,10 @@ export const useFetch = (url) => {
 
   useEffect(() => {
     fetch(url)
-      .then((response) => response.json())
+      .then((response) => {
+        setLoading(true);
+        return response.json();
+      })
       .then(setData)
       .catch(setError)
       .finally(() => setLoading(false));

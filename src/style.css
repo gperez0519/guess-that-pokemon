@@ -13,11 +13,32 @@ body {
 
 .pokemon-card-container {
   display: block;
+  transition: 1s all;
+}
+
+.btnPokemon {
+  border-radius: 5px;
+  background: slateblue;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  border: 0;
+  font-family: "Press Start 2P";
+  font-size: 8px;
+  line-height: 1.5;
+  transition: 1s ease-in-out;
+  cursor: pointer;
 }
 
 .disabled {
   cursor: not-allowed;
   color: #999 !important;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 108px);
 }
 
 .error {

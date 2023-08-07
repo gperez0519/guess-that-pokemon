@@ -3,26 +3,31 @@ import { PokemonDataContext } from "../App";
 import "./PokemonNavigation.css";
 
 const PokemonNavigation = ({ count, setCount }) => {
-  const { setAlreadyGuessed, setGuessCorrect } = useContext(PokemonDataContext);
+  const { setGuessCorrect } = useContext(PokemonDataContext);
+
+  const navigatePrev = () => {
+    setCount(count - 1);
+    setGuessCorrect(false);
+  }
+
+  const navigateNext = () => {
+    setCount(count + 1);
+    setGuessCorrect(false);
+  }
+
+
   return (
     <div className="pokemon-nav-links">
       <button
-        className={count < 2 ? "disabled" : ""}
+        className={count < 2 ? "btnPokemon disabled" : "btnPokemon"}
         disabled={count < 2}
-        onClick={() => {
-          setCount(count - 1);
-          setAlreadyGuessed(true);
-          setGuessCorrect(false);
-        }}
+        onClick={navigatePrev}
       >
         Prev
       </button>
       <button
-        onClick={() => {
-          setCount(count + 1);
-          setAlreadyGuessed(false);
-          setGuessCorrect(false);
-        }}
+        className="btnPokemon"
+        onClick={navigateNext}
       >
         Next
       </button>
